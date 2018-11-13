@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserInterface">
+
+    <Button
+        android:id="@+id/idBtnSwitchLuces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="51dp"
+        android:text="@string/switch_luces" />
+
+    <Button
+        android:id="@+id/idBtnSwitchAutomatico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="51dp"
+        android:text="@string/sensor_luz" />
+
+    <Button
+        android:id="@+id/idBtnAlarma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="51dp"
+        android:text="@string/alarma" />
+
+    <TextView
+        android:id="@+id/idBufferInMov"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="110dp"
+        android:text="@string/dato_mov"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/idBufferInSensorLuz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="110dp"
+        android:text="@string/dato_sensor_luz"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/idBufferInPersiana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="250dp"
+        android:layout_marginBottom="110dp"
+        android:text="@string/dato_persiana"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/idBufferInEstadoLuz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/dato_estado_luz"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/idBufferInHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="250dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/dato_hora"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+
+
+    <Button
+        android:id="@+id/idDesconectar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/desconectar" />
+
+    <ListView
+        android:id="@+id/listViewAlarma"
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+        android:layout_below="@+id/idBtnSwitchLuces"
+        android:layout_alignStart="@+id/idBtnSwitchLuces"
+        android:layout_alignEnd="@+id/idBtnAlarma"
+        android:layout_alignParentBottom="@+id/idBufferInMov"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:clickable="true" />
+
+</RelativeLayout>

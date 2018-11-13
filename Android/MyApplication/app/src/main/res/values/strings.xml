@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LumusSystem</string>
+    <string name="dispositivos_vinculados">Dispositivos Vinculados</string>
+    <string name="control_led">Control Led</string>
+    <string name="switch_luces">Switch Luces</string>
+    <string name="sensor_luz">Sensor Luz</string>
+    <string name="alarma">Alarma</string>
+    <string name="dato_mov">Sensor Mov:</string>
+    <string name="dato_sensor_luz">Sensor Luz:</string>
+    <string name="dato_persiana">Persiana:</string>
+    <string name="dato_estado_luz">Estado Luz:</string>
+    <string name="dato_hora">Hora:</string>
+    <string name="desconectar">Desconectar</string>
+    <string name="sensor_unsupported">Sensor no soportado</string>
+</resources>
