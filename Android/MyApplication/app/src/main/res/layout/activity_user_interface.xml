@@ -89,14 +89,16 @@
         android:textStyle="bold" />
 
 
-
     <Button
         android:id="@+id/idDesconectar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/idBtnAlarma"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
         android:text="@string/desconectar" />
+
+
 
     <ListView
         android:id="@+id/listViewAlarma"
@@ -110,5 +112,14 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="0dp"
         android:clickable="true" />
+
+    <Button
+        android:id="@+id/idBtnAjustarHoraBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:text="Ajustar Hora" />
 
 </RelativeLayout>

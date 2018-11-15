@@ -17,7 +17,7 @@
 #define MOTOR_PIN2 3
 #define MOTOR_PIN3 4
 #define MOTOR_PIN4 5
-#define APLAUSO 85
+#define APLAUSO 80
 #define DESV_MISMO_APL 200
 #define BRECHA_SEG_APLAU 500
 #define DESVIO_3_APLAUSOS 1000
@@ -226,13 +226,13 @@ void sensorLDR(bool estadoLectura) {
       if (lecturaLDR == estadoLecturaInt and bandTimerLDR == true) {
         if(millis() - previousMilisLDR > TIEMPO_ESPERA_LDR){
             
-            cambioEstadoLuz(estadoLectura);
+            
             
             if(estadoLectura == !posicionPersiana){
               persiana(estadoLectura);
               posicionPersiana = !posicionPersiana;
             }
-            
+            cambioEstadoLuz(estadoLectura);
             estadoLuzLDR = !estadoLuzLDR;
             estadoLuz = !estadoLuz;
             bandTimerLDR = false;
@@ -377,6 +377,16 @@ void recibirBluetooth(String dato, bool persianaOn){
     //SENSOR PROXIMIDAD - Activar/Desactivar sensor PIR
     if(dato[0] == '5'){
       pirHabilitado = !pirHabilitado;
+    }
+    //Programar la Hora y Fecha
+    if(dato[0] == '6'){
+      int anio = dato.substring(2,4).toInt();
+      int mes= dato.substring(10,2).toInt();
+      int dia = dato.substring(7,2).toInt();
+      int hora= dato.substring(13,2).toInt();
+      int minuto= dato.substring(16,2).toInt();
+      int seg= dato.substring(19,2).toInt();
+      RTC.adjust(DateTime(anio,mes,dia,hora,minuto,seg)); 
     }
   }
 

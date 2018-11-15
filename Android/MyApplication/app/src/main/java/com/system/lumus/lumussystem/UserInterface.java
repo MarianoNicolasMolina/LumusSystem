@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.UUID;
 public class UserInterface extends AppCompatActivity implements  TimePickerDialog.OnTimeSetListener,FingerPrintAuthCallback {
-    Button idBtnSwitchLuces, idBtnSwitchAutomatico,idBtnAlarma,idDesconectar;
+    Button idBtnSwitchLuces, idBtnSwitchAutomatico,idBtnAlarma,idDesconectar,idBtnAjustarHoraBT;
     TextView idBufferInMov;
     TextView idBufferInSensorLuz;
     TextView idBufferInPersiana;
@@ -103,7 +103,7 @@ public class UserInterface extends AppCompatActivity implements  TimePickerDialo
         idBufferInEstadoLuz =  findViewById(R.id.idBufferInEstadoLuz);
         idBufferInHora =  findViewById(R.id.idBufferInHora);
         listViewAlarma = findViewById(R.id.listViewAlarma);
-
+        idBtnAjustarHoraBT =findViewById(R.id.idBtnAjustarHoraBT);
 
         bluetoothIn = new Handler() {
             public void handleMessage(android.os.Message msg) {
@@ -206,6 +206,14 @@ public class UserInterface extends AppCompatActivity implements  TimePickerDialo
                 TimePickerDialog timePickerDialog = new TimePickerDialog(UserInterface.this,UserInterface.this,hour,minute, DateFormat.is24HourFormat(UserInterface.this));
 
                 timePickerDialog.show();
+            }
+        });
+
+        idBtnAjustarHoraBT.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/dd/mm|HH:mm:ss");
+                MyConexionBT.write("6|" + sdf.format(String.valueOf(Calendar.getInstance().getTime())));
+                Toast.makeText(UserInterface.this, "Switch sensor de luz", Toast.LENGTH_SHORT).show(); // Hacer parte del sensor de luz
             }
         });
         idDesconectar.setOnClickListener(new View.OnClickListener() {
